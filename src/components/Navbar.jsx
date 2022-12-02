@@ -27,7 +27,35 @@ const Navbar = () => {
 
       {/* Mobile Version: If toggle state is true, show img close otherwise show img menu */}
       <div className="sm:hidden flex flex-1 justify-end items-center">
-        <img src={toggle ? close : menu} />
+        <img
+          // If toggle is true, render false : else render menu
+          src={toggle ? close : menu}
+          alt="menu"
+          className="w-[28px] h-[28px] object-contain"
+          // change state: if state is false, change to true. vice versa
+          onClick={() => setToggle((prev) => !prev)}
+        />
+
+        <div
+          // If toggle is true, render flex : else hidden
+          className={`${
+            toggle ? "flex" : "hidden"
+          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+        >
+          {/* Same ul from above */}
+          <ul className="list-none flex justify-end items-center flex-1 flex-col">
+            {navLinks.map((nav, index) => (
+              <li
+                key={nav.id}
+                className={`font-poppins font-normal cursor-pointer text-[16px] text-white ${
+                  index === navLinks.length - 1 ? "mr-0" : "mb-4"
+                }`}
+              >
+                <a href={`${nav.id}`}>{nav.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
