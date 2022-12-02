@@ -4,3 +4,4 @@
   - using if statement for styling.
     if index of array equals the last array, margin right 0, else margin right 10
     className={`${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+  - using state to toggle different divs and styles
