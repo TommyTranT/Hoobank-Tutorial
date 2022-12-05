@@ -7,8 +7,7 @@ const Testimonials = () => (
     id="clients"
     className={`${styles.paddingY} ${styles.flexCenter} flex-col relative`}
   >
-    {/* Gradient */}
-    <div />
+    <div className="blue__gradient rounded-full w-[60%] h-[60%] absolute z-[0] -right-[50%]" />
 
     <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
       <h1 className={styles.heading2}>
