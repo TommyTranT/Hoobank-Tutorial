@@ -3,10 +3,25 @@ import { features } from "../constants";
 import styles, { layout } from "../style";
 import Button from "./Button";
 
+// if index is not the last one than give it a margin bottom of 6, else margin bottom is 0
 const FeatureCard = ({ icon, title, content, index }) => (
-  <div>
-    <div>
-      <img src={icon} alt="icon" />
+  <div
+    className={`flex flex-row p-6 rounded-[20px] ${
+      index !== features.length - 1
+    } ? "mb-6" : "mb-0"} feature-card`}
+  >
+    <div
+      className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}
+    >
+      <img src={icon} alt="icon" className="w-[50%] h-[50%] object-contain" />
+    </div>
+    <div className="flex-1 flex flex-col ml-3">
+      <h4 className="font-poppins font-semibold text-white test-[18px] leading-23 mb-1">
+        {title}
+      </h4>
+      <p className="font-poppins font-normal text-dimWhite test-[16px] leading-24 mb-1">
+        {content}
+      </p>
     </div>
   </div>
 );
