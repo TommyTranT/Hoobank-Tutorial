@@ -4,9 +4,13 @@ import styles, { layout } from "../style";
 import Button from "./Button";
 
 const CardDeal = () => (
-  <section>
-    <div>
-      <img src={card} />
+  <section className={layout.section}>
+    <div className={layout.section}>
+      <h2 className={styles.heading2}>
+        Find a better card deal <br className="sm:block hidden" />
+        in few easy steps.
+      </h2>
+      <p></p>
     </div>
   </section>
 );
