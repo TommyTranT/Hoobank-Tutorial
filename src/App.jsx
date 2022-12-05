@@ -1,5 +1,4 @@
 // rafce
-import React from "react";
 import styles from "./style";
 
 // create index in component to import all components
